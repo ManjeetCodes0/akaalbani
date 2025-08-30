@@ -63,8 +63,6 @@ body.no-scroll {
 
 /* Redesigned Controls */
 .paath-controls-wrapper {
-    position: sticky;
-    top: 10px;
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(12px);
     border: 1px solid var(--border-color);

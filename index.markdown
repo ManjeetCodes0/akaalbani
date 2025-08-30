@@ -61,7 +61,7 @@ description: "Experience the divine teachings of Guru Granth Sahib with audio, t
           </div>
           <div class="card-content">
             <p>Access the complete collection of daily prayers, with translations and audio.</p>
-            <a href="/pages/nitnem/" class="continue-btn">Start Reading →</a>
+            <a href="{{ site.baseurl }}/pages/nitnem/" class="continue-btn">Start Reading →</a>
           </div>
         </div>
         

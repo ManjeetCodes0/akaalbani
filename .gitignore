@@ -1,5 +1,27 @@
-_site
-.sass-cache
-.jekyll-cache
+# Ignore site build output
+_site/
+.sass-cache/
+.jekyll-cache/
 .jekyll-metadata
-vendor
+
+# Ignore local configuration
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Ignore Ruby dependencies (if using locally)
+vendor/
+.bundle/
+Gemfile.lock
+
+# Ignore log files
+*.log

@@ -1,5 +1,5 @@
 title: "Gurbani Website"
 description: "Nitnem, Hukamnama, Sikh History & Gurbani Resources"
-baseurl: "" 
-url: "http://localhost:4000"
+baseurl: "akaalbani" 
+url: "https://manjeetcodes0.github.io/"
 theme: minima

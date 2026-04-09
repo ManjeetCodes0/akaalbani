@@ -7,23 +7,30 @@
   --secondary: #036666;
   --accent: #e2b93b;
   --border: #e6dccf;
-  --card-shadow: 0 14px 40px rgba(65, 47, 24, 0.12);
+  --card-shadow: 0 2px 12px rgba(65, 47, 24, 0.06);
 }
 
 * {
   box-sizing: border-box;
 }
 
-html,
+html {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background: radial-gradient(circle at 12% 20%, rgba(182, 64, 34, 0.08), transparent 32%),
-    radial-gradient(circle at 86% 12%, rgba(3, 102, 102, 0.1), transparent 28%),
-    linear-gradient(180deg, #f9f7f2 0%, #f2ece1 100%);
+  background: #f9f7f3;
   color: var(--ink);
   font-family: var(--font-body), sans-serif;
-  min-height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -37,73 +44,29 @@ img {
   height: auto;
 }
 
-.site-shell {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
 .section-title {
   font-family: var(--font-heading), serif;
-  font-size: clamp(1.45rem, 2.4vw, 2.1rem);
+  font-size: clamp(20px, 2.4vw, 28px);
   letter-spacing: 0.2px;
   margin: 0;
+  color: var(--ink);
 }
 
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
   box-shadow: var(--card-shadow);
-  border-radius: 1.25rem;
 }
 
 .kicker {
   text-transform: uppercase;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  font-size: 11px;
+  letter-spacing: 0.06em;
   font-weight: 700;
   color: var(--secondary);
 }
 
 .meta {
   color: var(--muted);
-  font-size: 0.78rem;
-}
-
-.page-bg-shape {
-  position: fixed;
-  z-index: -1;
-  border-radius: 999px;
-  filter: blur(0.5px);
-  pointer-events: none;
-}
-
-.shape-a {
-  width: 360px;
-  height: 360px;
-  background: radial-gradient(circle, rgba(182, 64, 34, 0.18), rgba(182, 64, 34, 0));
-  top: -120px;
-  left: -120px;
-}
-
-.shape-b {
-  width: 430px;
-  height: 430px;
-  background: radial-gradient(circle, rgba(3, 102, 102, 0.2), rgba(3, 102, 102, 0));
-  right: -130px;
-  top: 35%;
-}
-
-.shape-c {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(226, 185, 59, 0.25), rgba(226, 185, 59, 0));
-  left: 35%;
-  bottom: -120px;
-}
-
-@media (max-width: 768px) {
-  .site-shell {
-    padding: 0 0.85rem;
-  }
+  font-size: 12px;
 }

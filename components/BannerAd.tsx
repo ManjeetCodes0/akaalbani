@@ -1,56 +1,99 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Sparkles, RadioTower, ArrowRight } from "lucide-react";
+import { RadioTower, ArrowRight } from "lucide-react";
 
 export default function BannerAd() {
   return (
-    <motion.section
-      initial={{ opacity: 0, scale: 0.97 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.5 }}
-      className="card"
-      style={{
-        marginBottom: "1.8rem",
-        borderRadius: "1.3rem",
-        overflow: "hidden",
-        background: "linear-gradient(118deg, #005f73 0%, #0a9396 40%, #94d2bd 100%)",
-        color: "#f8fffe",
-        position: "relative"
-      }}
-    >
-      <div style={{ position: "absolute", width: "180px", height: "180px", borderRadius: "999px", right: "-34px", top: "-72px", background: "rgba(255,255,255,0.15)" }} />
-      <div style={{ position: "absolute", width: "150px", height: "150px", borderRadius: "999px", left: "23%", bottom: "-90px", background: "rgba(0,0,0,0.12)" }} />
-
-      <div style={{ position: "relative", zIndex: 2, padding: "1.25rem 1.2rem", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
-        <div>
-          <p style={{ margin: 0, display: "inline-flex", alignItems: "center", gap: "0.35rem", fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", fontSize: "0.72rem" }}>
-            <RadioTower size={14} /> Sponsored Update
+    <section className="ba-section">
+      <div className="ba-inner">
+        <div className="ba-text">
+          <p className="ba-label">
+            <RadioTower size={14} /> Sponsored
           </p>
-          <h3 style={{ margin: "0.45rem 0", fontFamily: "var(--font-heading)", fontSize: "1.55rem" }}>ਆਕਾਲ ਬਾਣੀ Live ਐਪ ਹੁਣ ਉਪਲਬਧ</h3>
-          <p style={{ margin: 0, opacity: 0.92 }}>ਤੇਜ਼ ਨੋਟੀਫਿਕੇਸ਼ਨ, ਵੀਡੀਓ ਬੁਲੇਟਿਨ ਅਤੇ ਜ਼ਿਲ੍ਹਾ-ਵਾਰ ਅਲਰਟ ਇੱਕੇ ਥਾਂ।</p>
+          <h3 className="ba-title">ਆਕਾਲ ਬਾਣੀ Live App Now Available</h3>
+          <p className="ba-desc">Fast notifications, video bulletins, and district-wise alerts in one place.</p>
         </div>
-
-        <motion.button
-          whileHover={{ x: 5 }}
-          whileTap={{ scale: 0.94 }}
-          style={{
-            border: "none",
-            borderRadius: "999px",
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.35rem",
-            fontWeight: 700,
-            cursor: "pointer",
-            padding: "0.68rem 1.08rem",
-            color: "#0d504e",
-            background: "#fef9d9"
-          }}
-        >
-          <Sparkles size={15} /> ਹੁਣੇ ਡਾਊਨਲੋਡ ਕਰੋ <ArrowRight size={16} />
-        </motion.button>
+        <button className="ba-btn">
+          Download Now <ArrowRight size={16} />
+        </button>
       </div>
-    </motion.section>
+
+      <style jsx>{`
+        .ba-section {
+          margin-bottom: 2.5rem;
+          border-radius: 10px;
+          overflow: hidden;
+          background: linear-gradient(135deg, #f9f6f0 0%, #f0eade 100%);
+          border: 1px solid #e8e3da;
+        }
+
+        .ba-inner {
+          padding: 1.25rem 1.5rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 1.5rem;
+          flex-wrap: wrap;
+        }
+
+        .ba-label {
+          margin: 0;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.35rem;
+          font-weight: 700;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          font-size: 11px;
+          color: var(--primary);
+        }
+
+        .ba-title {
+          margin: 0.35rem 0;
+          font-family: var(--font-heading), serif;
+          font-size: clamp(18px, 2.5vw, 24px);
+          color: #1f1c1a;
+        }
+
+        .ba-desc {
+          margin: 0;
+          color: #666;
+          font-size: 14px;
+        }
+
+        .ba-btn {
+          border: none;
+          border-radius: 8px;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-weight: 600;
+          cursor: pointer;
+          padding: 0.7rem 1.25rem;
+          color: #fff;
+          background: var(--primary);
+          font-size: 14px;
+          font-family: inherit;
+          white-space: nowrap;
+          transition: opacity 0.15s;
+        }
+
+        .ba-btn:hover {
+          opacity: 0.9;
+        }
+
+        @media (max-width: 600px) {
+          .ba-inner {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .ba-btn {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+      `}</style>
+    </section>
   );
 }

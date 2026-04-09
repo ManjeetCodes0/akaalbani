@@ -1,47 +1,33 @@
-"use client";
+import { fetchSanityPosts } from "@/lib/sanity";
+import HomePageClient from "./HomePageClient";
 
-import AnimatedSection from "@/components/AnimatedSection";
-import BannerAd from "@/components/BannerAd";
-import FeaturedCircles from "@/components/FeaturedCircles";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import TopStories from "@/components/TopStories";
-import WhatsNew from "@/components/WhatsNew";
-import { FEATURED_POSTS, HERO_MAIN, HERO_SIDE, TOP_STORIES, WHATS_NEW_LIST, WHATS_NEW_MAIN } from "@/data/news";
+// Revalidate quickly so edits in Sanity appear without a redeploy
+export const revalidate = 15;
 
-export default function HomePage() {
+export default async function HomePage() {
+  const sanityPosts = await fetchSanityPosts();
+
+  const allPosts = sanityPosts;
+  const heroMain = sanityPosts[0] ?? null;
+  const heroSide = sanityPosts.slice(1, 4);
+  const featuredPosts = sanityPosts.slice(4, 8);
+  const topStories = sanityPosts.slice(8, 12);
+  const whatsNewMain = sanityPosts[12] ?? sanityPosts[0] ?? null;
+  const whatsNewList = sanityPosts.slice(13, 16);
+
+  if (!heroMain || !whatsNewMain) {
+    return <HomePageClient allPosts={[]} featuredPosts={[]} heroMain={null} heroSide={[]} topStories={[]} whatsNewMain={null} whatsNewList={[]} />;
+  }
+
   return (
-    <>
-      <div className="page-bg-shape shape-a" />
-      <div className="page-bg-shape shape-b" />
-      <div className="page-bg-shape shape-c" />
-
-      <Header />
-
-      <main className="site-shell">
-        <AnimatedSection delay={0.04}>
-          <FeaturedCircles posts={FEATURED_POSTS} />
-        </AnimatedSection>
-
-        <AnimatedSection delay={0.08}>
-          <Hero mainPost={HERO_MAIN} sidePosts={HERO_SIDE} />
-        </AnimatedSection>
-
-        <AnimatedSection delay={0.12}>
-          <BannerAd />
-        </AnimatedSection>
-
-        <AnimatedSection delay={0.16}>
-          <TopStories posts={TOP_STORIES} />
-        </AnimatedSection>
-
-        <AnimatedSection delay={0.2}>
-          <WhatsNew mainPost={WHATS_NEW_MAIN} listPosts={WHATS_NEW_LIST} />
-        </AnimatedSection>
-      </main>
-
-      <Footer />
-    </>
+    <HomePageClient
+      allPosts={allPosts}
+      featuredPosts={featuredPosts}
+      heroMain={heroMain}
+      heroSide={heroSide}
+      topStories={topStories}
+      whatsNewMain={whatsNewMain}
+      whatsNewList={whatsNewList}
+    />
   );
 }

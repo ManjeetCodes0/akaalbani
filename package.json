@@ -6,19 +6,28 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sanity:dev": "sanity dev --host 0.0.0.0 --port 3333",
+    "sanity:build": "sanity build",
+    "sanity:deploy": "sanity deploy",
+    "sanity:seed-categories": "tsx scripts/seedCategories.ts"
   },
   "dependencies": {
+    "@sanity/client": "^6.28.3",
+    "@sanity/vision": "^3.83.0",
     "framer-motion": "^12.10.5",
     "lucide-react": "^0.511.0",
     "next": "^16.0.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "sanity": "^3.83.0",
+    "styled-components": "^6.3.12"
   },
   "devDependencies": {
     "@types/node": "^22.15.21",
     "@types/react": "^19.1.5",
     "@types/react-dom": "^19.1.5",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   }
 }

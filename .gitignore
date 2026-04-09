@@ -7,4 +7,19 @@ out
 .env.local
 .env.development.local
 .env.test.local
+.env.production
 .env.production.local
+
+# GCP service account key — never commit this
+gcp-key.json
+
+# News discovery
+scripts/news_discovery/news_seen.db
+scripts/news_discovery/discovered_news.json
+scripts/news_discovery/rewritten_news.json
+scripts/news_discovery/published_urls.txt
+scripts/news_discovery/retry/
+
+# Local tooling/state artifacts
+.sanity/
+*.tsbuildinfo

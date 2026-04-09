@@ -1,0 +1,15 @@
+:root {
+  color-scheme: light !important;
+}
+
+html,
+body {
+  background: #fffdf7;
+}
+
+[data-ui] {
+  --card-bg-color: #fffdf7;
+  --component-bg-color: #fffdf7;
+  --brand-primary: #b64022;
+  --focus-color: #036666;
+}

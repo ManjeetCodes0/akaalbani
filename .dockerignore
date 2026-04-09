@@ -1,0 +1,32 @@
+# Build artefacts
+.next
+node_modules
+
+# Git
+.git
+.gitignore
+
+# Secrets — NEVER put these in the image
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test.local
+.env.production.local
+gcp-key.json
+
+# Dev / tooling
+.claude/
+.sanity/
+.claudeignore
+CLAUDE.md
+SETUP_GUIDE.md
+README*
+*.log
+*.md
+
+# Scripts not needed at runtime
+scripts/
+
+# Test files
+test_*.py

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(python -c \"from sanity_client import PROJECT_ID\")",
+      "Bash(python -c \"from cli import main; print\\('✅ CLI imports successful'\\)\")",
+      "Bash(python -c \"from cli import main; print\\('CLI imports OK'\\)\")",
+      "Bash(python check_setup.py)",
+      "Bash(powershell:*)",
+      "Bash(npx tsc:*)"
+    ]
+  }
+}
